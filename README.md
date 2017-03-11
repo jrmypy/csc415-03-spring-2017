@@ -1,5 +1,5 @@
 # HW1 Simple C program
-#### First-Name Last-Name
+#### PaoYang Tan
 TODO - Update your name in this readme.
 
 TODO - Add a badge from travis CI here
