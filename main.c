@@ -52,17 +52,16 @@ int main(int argc, char *argv[]) {
 
   //TODO 7: Print the stack size limits
     getrlimit(RLIMIT_STACK, &lim);
-  printf("stack size  (soft limit): %ld\n", lim);
+  printf("stack size  (soft limit): %ld\n", lim.rlim_cur);
 
   //TODO 8: Print the maximum number of processes/threads that you can spawn limits
-    getrlimit(RLIMIT_CPU, &lim);
-  printf("process limit  (soft limit): %ld\n", lim);
-    getrlimit(RLIMIT_CORE, &lim);
-  printf("process limit  (hard limit): %ld\n", lim);
+    getrlimit(RLIMIT_NPROC, &lim);
+  printf("process limit  (soft limit): %ld\n", lim.rlim_cur);
+  printf("process limit  (hard limit): %ld\n", lim.rlim_max);
 
   //TODO 9: Print the maximum number of number of file descriptors that this process may allocate
-    getrlimit(RLIMIT_FSIZE, &lim);
-  printf("max file descriptors  (soft limit): %ld\n", lim);
-  printf("max file descriptors  (hard limit): %ld\n", lim);
+    getrlimit(RLIMIT_NOFILE, &lim);
+  printf("max file descriptors  (soft limit): %ld\n", lim.rlim_cur);
+  printf("max file descriptors  (hard limit): %ld\n", lim.rlim_max);
   return 0;
 }
