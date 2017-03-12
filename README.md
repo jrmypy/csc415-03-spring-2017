@@ -1,8 +1,6 @@
 # HW1 Simple C program
 #### PaoYang Tan
-TODO - Update your name in this readme.
-
-TODO - Add a badge from travis CI here
+[![Build Status](https://travis-ci.org/jrmypy/csc415-03-spring-2017.svg?branch=master)](https://travis-ci.org/jrmypy/csc415-03-spring-2017)
 
 ## Problem statement:
 
