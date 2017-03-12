@@ -30,13 +30,13 @@ int main(int *argc, char **argv[]) {
   char characterArray2 = malloc(100);
 
   // TODO 2: Print the addresses of the main function 'main()'
-  printf("main function address: %p\n", &main);
+  printf("main function address: %p\n", main);
 
   // TODO 3: Print the addresses of the recursive function 'recursiveFunction()'
-  printf("recursive function address: \n", &recursiveFunction);
+  printf("recursive function address: %p\n", recursiveFunction);
 
   // TODO 4: Print the address of the stack allocated variable 'i'
-  printf("address of variable i (main stack address): %p\n", i);
+  printf("address of variable i (main stack address): %p\n", &i);
 
   // TODO 5: Print the address of the statically allocated global variable 'globalVariable'
   printf("static data address: %p\n", &globalVariable);
@@ -51,14 +51,18 @@ int main(int *argc, char **argv[]) {
   struct rlimit lim;
 
   //TODO 7: Print the stack size limits
+    getrlimit(RLIMIT_STACK, &lim);
   printf("stack size  (soft limit): %ld\n", lim);
 
   //TODO 8: Print the maximum number of processes/threads that you can spawn limits
+    getrlimit(RLIMIT_CPU, &lim);
   printf("process limit  (soft limit): %ld\n", lim);
+    getrlimit(RLIMIT_CORE, &lim);
   printf("process limit  (hard limit): %ld\n", lim);
 
   //TODO 9: Print the maximum number of number of file descriptors that this process may allocate
-  printf("max file descriptors  (soft limit): %ld\n", 0);
-  printf("max file descriptors  (hard limit): %ld\n", 0L);
-  return 10;
+    getrlimit(RLIMIT_FSIZE, &lim);
+  printf("max file descriptors  (soft limit): %ld\n", lim);
+  printf("max file descriptors  (hard limit): %ld\n", lim);
+  return 0;
 }
