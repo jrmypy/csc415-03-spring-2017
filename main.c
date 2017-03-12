@@ -22,7 +22,7 @@ int recursiveFunction(int i) {
   return 0;//DO NOT MODIFY
 }
 
-int main(int *argc, char *argv[]) {
+int main(int argc, char *argv[]) {
   int i;
 
   // Dynamicly allocated arrays
